@@ -1,13 +1,15 @@
-📷 Interview API
+Interview API
+
 A simple ASP.NET Core 8 Web API for managing camera data, featuring JWT authentication, role-based authorization, and in-memory data storage. This project demonstrates best practices for building APIs, including the use of DTOs, dependency injection, and secure authentication.
 
-📝 Features
+Features
+
 CRUD Operations: Manage camera data (Create, Read, Update, Delete).
 JWT Authentication: Secure endpoints with JSON Web Tokens.
 Role-Based Authorization: Restrict access to specific actions based on user roles (Admin, Viewer, etc.).
 In-Memory Storage: Uses in-memory storage for simplicity.
 Swagger Integration: API documentation and testing via Swagger UI.
-🚀 Getting Started
+
 Prerequisites
 .NET 8 SDK
 Visual Studio / Visual Studio Code
@@ -15,29 +17,25 @@ Git
 Installation
 Clone the Repository
 
-bash
-Copy code
-git clone https://github.com/yourusername/interview-api.git
-cd interview-api
+git clone https://github.com/ndothall/InterviewAPI.git
+cd InterviewAPI
 Restore Dependencies
 
-bash
-Copy code
 dotnet restore
 Run the Application
 
-bash
-Copy code
 dotnet run
 Access Swagger UI
 
 Open your browser and navigate to:
 
-bash
-Copy code
 https://localhost:5001/swagger
-🔑 Authentication
+
+Authentication
 Default Users and Passwords
+Any Username supplied with the password: amplifund
+A random role is generated after authentication.
+i.e.
 Username: Seth
 Password: amplifund
 
@@ -49,12 +47,10 @@ Password: amplifund
 
 Login Endpoint
 http
-Copy code
 POST /api/authentication/login
 Request Body:
 
 json
-Copy code
 {
   "username": "Seth",
   "password": "amplifund"
@@ -62,7 +58,6 @@ Copy code
 Response:
 
 json
-Copy code
 {
   "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
   "Role": "Admin",
@@ -71,9 +66,9 @@ Copy code
 Include the token in the Authorization header to access protected endpoints:
 
 makefile
-Copy code
 Authorization: Bearer <token>
-📚 API Endpoints
+
+API Endpoints
 Cameras
 Method	Endpoint	Description	Authorization
 GET	/api/cameras	Retrieve all cameras	Admin, Viewer
@@ -81,14 +76,16 @@ GET	/api/cameras/{id}	Retrieve a camera by ID	Admin, Viewer
 POST	/api/cameras	Create a new camera	Admin
 PUT	/api/cameras/{id}	Update an existing camera	Admin
 DELETE	/api/cameras/{id}	Delete a camera by ID	Admin
-🛠️ Technologies Used
+
+Technologies Used
 ASP.NET Core 8
 C#
 JWT Authentication
 Swagger (Swashbuckle)
 Dependency Injection
 In-Memory Data Storage
-🤝 Contributing
+
+Contributing
 Contributions are welcome! If you'd like to improve this project, please:
 
 Fork the repository.
